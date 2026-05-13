@@ -24,6 +24,7 @@ builder.Services.AddCors(options =>
             .WithOrigins(
                 "http://localhost:5173",
                 "http://localhost:5173",
+                "https://profileservice-c5dcc6dvchacasax.swedencentral-01.azurewebsites.net",
                 "https://lemon-bush-0a5087a03.7.azurestaticapps.net"
             )
             .AllowAnyHeader()
