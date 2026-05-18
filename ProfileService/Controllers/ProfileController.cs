@@ -46,6 +46,9 @@ public class ProfileController(IProfileService profileService) : ControllerBase
     [HttpPut("{authUserId}")]
     public async Task<IActionResult> Update(string authUserId, UpdateProfileRequest request)
     {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
         var result = await _profileService.UpdateProfileAsync(authUserId, request);
 
         return result.Success
